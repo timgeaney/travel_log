@@ -28,5 +28,8 @@ class User < ActiveRecord::Base
   #validates_presence_of :firstname, :lastname
   validates_uniqueness_of :firstname, :lastname, :email, :case_sensitive => false
 
+  has_many :groups
+  has_many :trips
+
 
 end

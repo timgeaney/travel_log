@@ -1,5 +1,9 @@
 TravelLog::Application.routes.draw do
 
+  get "trips/new"
+
+  get "groups/new"
+
   authenticated :user do
     root :to => 'home#index'
   end
@@ -8,6 +12,7 @@ TravelLog::Application.routes.draw do
 
   devise_for :users
   resources :users
+  resources :trips
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
