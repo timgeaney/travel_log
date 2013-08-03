@@ -1,0 +1,42 @@
+<% provide(:title, 'Sign up') %>
+<h1>Create a Travel account</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
+
+      <%= render 'shared/error_messages' , object: f.object %>
+
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
+
+      <%= f.label :firstname %>
+      <%= f.text_field :firstname %>
+
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname %>
+
+      <%= f.label :gender, 'Male' %>
+      <%= f.radio_button :gender, 'male', :checked => true %>
+      <%= f.label :gender, 'Female' %>
+      <%= f.radio_button :gender, 'Female' %></br></br>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+      
+      <%= f.label :username, "Username" %>
+      <%= f.text_field :username %></br>
+
+      <%= f.label :newsletter, "Sign up for the Travel-log Newsletter" %>
+      <%= f.check_box :newsletter %></br></br>
+
+      <%= f.submit "Register" %>
+    <% end %>
+  </div>
+</div>
