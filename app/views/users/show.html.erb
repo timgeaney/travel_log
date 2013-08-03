@@ -1,4 +1,4 @@
 <h3>User</h3>
 <p>User: <%= @user.firstname %></p>
-<p><%= image_tag @user.avatar.url(:thumb) %></p>
+<p>Profile Picture: <%= image_tag @user.avatar.url(:mini) %></p>
 <p>Email: <%= @user.email if @user.email %></p>

@@ -13,7 +13,15 @@ class User < ActiveRecord::Base
           :omniauthable
 
   attr_accessible :role_ids, :as => :admin       
-  attr_accessible :avatar, :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :avatar, 
+                  :firstname,
+                  :lastname, 
+                  :username,
+                  :gender, 
+                  :email, 
+                  :password, 
+                  :password_confirmation, 
+                  :remember_me
   
   has_attached_file :avatar, { :styles => {:medium => "300 x 240", :thumb => "112x112#", :mini => '44x44#'}, :default_url => "/images/:style/missing.png" }
 
