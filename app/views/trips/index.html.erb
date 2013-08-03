@@ -1,0 +1,8 @@
+<% provide(:title, 'All Trips') %>
+
+<div id="trips">
+	<%#= link_to (image_tag trip.picture.url(:large)), trip %>
+	<%= render @trips %>
+</div>
+
+<%= will_paginate %>

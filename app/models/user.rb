@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :firstname, :lastname, :email, :case_sensitive => false
 
   has_many :groups
-  has_many :trips
+  has_many :trips, dependent: :destroy
 
 
 end

@@ -1,11 +1,12 @@
 class TripsController < ApplicationController
+  #before_action :user_signed_in?, only: [:create, :destroy]
   
   def index
-    
+    @trips = Trip.paginate(page: params[:page])
   end
 
   def show
-    
+    @trip = Trip.find(params[:id])
   end
 
   def new
@@ -14,6 +15,12 @@ class TripsController < ApplicationController
 
   def create
     @trip = current_user.trips.build(params[:trip])
+    if @trip.save
+      flash[:sucess]= "New Trip created"
+      redirect_to trips_path
+    else
+      render root_url
+    end
   end
 
   def destroy
