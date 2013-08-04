@@ -2,11 +2,12 @@ class TripsController < ApplicationController
   #before_action :user_signed_in?, only: [:create, :destroy]
   
   def index
-    @trips = Trip.paginate(page: params[:page])
+    @trips = current_user.trips.paginate(page: params[:page])
   end
 
   def show
     @trip = Trip.find(params[:id])
+    
   end
 
   def new

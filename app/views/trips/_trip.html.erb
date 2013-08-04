@@ -1,3 +1,4 @@
 <li>
-	<span><%= trip.description %></span>
+	<%= link_to (image_tag trip.picture.url(:medium)), trip %>
+	<%= trip.description %>
 </li>
